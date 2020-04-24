@@ -2,6 +2,7 @@ package pe.edu.upc.time2speak.model;
 
 import java.sql.Blob;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,5 +24,7 @@ public class premios {
     private String nombre_premio;
     private Blob medalla;
     private Date tiempo;
-    private int Paciente_id_paciente;
+    
+    @Column(name = "Paciente_id_paciente", nullable = false)
+    private int pacienteId;
 }

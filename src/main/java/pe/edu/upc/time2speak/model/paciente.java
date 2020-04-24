@@ -1,6 +1,7 @@
 package pe.edu.upc.time2speak.model;
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,10 @@ public class paciente {
     private String nombre;
     private String apellido;
     private String contrasena;
+    private String correo;
     private Date fecha_nacimiento;
     private boolean deshabilitado;
-    private int Doctor_id_doctor;
+    
+    @Column(name = "Doctor_id_doctor", nullable = false)
+    private int doctorId;
 }

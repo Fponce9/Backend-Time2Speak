@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.edu.upc.time2speak.service;
+package pe.edu.upc.time2speak.controller;
 
 /**
  *
  * @author nanop
  */
-public interface sesion_terapia {
+public class pacienteController {
     
 }

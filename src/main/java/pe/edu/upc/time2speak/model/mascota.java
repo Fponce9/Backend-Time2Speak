@@ -1,5 +1,6 @@
 package pe.edu.upc.time2speak.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,8 @@ public class mascota {
     private int id_mascota;
     
     private String nombre;
-    private int imagen;
-    private int paciente_id_paciente;
+    private int imagen; // cambiar a blob
+    
+    @Column(name = "paciente_id_paciente", nullable = false)
+    private int pacienteId;
 }

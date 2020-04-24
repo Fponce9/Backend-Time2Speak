@@ -1,6 +1,7 @@
 package pe.edu.upc.time2speak.model;
 
 import java.sql.Blob;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,5 +22,7 @@ public class palabra {
     private int id_palabra;
     private String palabra;
     private Blob image;
-    private String Terapia_id_letra;
+    
+    @Column(name = "Terapia_id_letra", nullable = false)
+    private String terapiaId;
 }
