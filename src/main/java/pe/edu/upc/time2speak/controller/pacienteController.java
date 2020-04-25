@@ -1,14 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.edu.upc.time2speak.controller;
 
-/**
- *
- * @author nanop
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import pe.edu.upc.time2speak.model.paciente;
+import pe.edu.upc.time2speak.service.pacienteService;
+
+@RestController
 public class pacienteController {
+    
+    @Autowired
+    private pacienteService PacienteService;
+    
+    @PostMapping("/registrarPaciente")
+    public paciente registrarPaciente (@RequestBody paciente Paciente){
+        return PacienteService.registrarPaciente(Paciente);
+    }
+    
+    @PostMapping("/inicioSesion/{correo}/{contrasena}")
+    public paciente iniciarPaciente (@PathVariable("correo") String correo,@PathVariable("contrasena") String contrasena){
+        return PacienteService.inicioSesion(correo, contrasena);
+    }
+    
+    @PostMapping("/deshabilitarPaciente/{Id}")
+    public paciente deshabilitarCuenta(@PathVariable int Id){
+        return PacienteService.deshabilitar(Id);
+    }
+    
     
 }

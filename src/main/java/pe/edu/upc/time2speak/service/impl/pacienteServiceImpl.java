@@ -22,10 +22,13 @@ public class pacienteServiceImpl implements pacienteService {
     }
 
     @Override
-    public boolean inicioSesion(String correo, String contrasena) {
+    public paciente inicioSesion(String correo, String contrasena) {
         paciente temp = repository.findByCorreo(correo);
         String tempContra = temp.getContrasena();
-        return tempContra.equals(contrasena);
+        if (tempContra.equals(contrasena)){
+            return temp;
+        }
+        else return null;
     }
 
     @Override
@@ -39,11 +42,10 @@ public class pacienteServiceImpl implements pacienteService {
     }
 
     @Override
-    public paciente deshabilitar(int Id,boolean flag) {
+    public paciente deshabilitar(int Id) {
         paciente temp = repository.findById(Id)
                 .orElse(null);
-        temp.setDeshabilitado(flag);
+        temp.setDeshabilitado(true);
         return repository.save(temp);
     }
-    
 }

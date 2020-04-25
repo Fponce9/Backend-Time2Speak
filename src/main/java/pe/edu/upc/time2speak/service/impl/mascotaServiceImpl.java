@@ -30,7 +30,6 @@ public class mascotaServiceImpl implements mascotaService {
 
     @Override
     public mascota obtenerMacotaPorPaciente(int id_paciente) {
-        return repository.findById(id_paciente)
-                .orElse(null);
+        return repository.findByPacienteId(id_paciente);
     }
 }
