@@ -21,7 +21,7 @@ public class palabra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_palabra;
     private String palabra;
-    private Blob image;
+    private String imagen;
     
     @Column(name = "Terapia_id_letra", nullable = false)
     private String terapiaId;
