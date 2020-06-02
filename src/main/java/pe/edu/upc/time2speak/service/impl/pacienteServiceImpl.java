@@ -1,5 +1,6 @@
 package pe.edu.upc.time2speak.service.impl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.time2speak.model.paciente;
@@ -47,5 +48,10 @@ public class pacienteServiceImpl implements pacienteService {
                 .orElse(null);
         temp.setDeshabilitado(true);
         return repository.save(temp);
+    }
+
+    @Override
+    public List<paciente> obtenerPacientePorDoctor(int id) {
+        return repository.findByDoctorId(id);
     }
 }
