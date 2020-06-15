@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,10 +21,7 @@ public class palabra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_palabra;
     private String palabra;
-    
-    @Lob
-    @Column(name = "imagen")
-    private byte[] imagen;
+    private String imagen;
     
     @Column(name = "Terapia_id_letra", nullable = false)
     private String terapiaId;
