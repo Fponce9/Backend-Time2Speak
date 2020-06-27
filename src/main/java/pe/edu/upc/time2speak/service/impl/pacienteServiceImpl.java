@@ -33,12 +33,13 @@ public class pacienteServiceImpl implements pacienteService {
     }
 
     @Override
-    public paciente editarDatos(int Id,String nombre, String newContrasena, String Apellido) {
+    public paciente editarDatos(int Id,String nombre, String newContrasena, String Apellido, String Correo) {
         paciente temp = repository.findById(Id)
                 .orElse(null);
         temp.setApellido(Apellido);
         temp.setNombre(nombre);
         temp.setContrasena(newContrasena);
+        temp.setCorreo(Correo);
         return repository.save(temp);
     }
 
@@ -54,4 +55,6 @@ public class pacienteServiceImpl implements pacienteService {
     public List<paciente> obtenerPacientePorDoctor(int id) {
         return repository.findByDoctorId(id);
     }
+
+
 }

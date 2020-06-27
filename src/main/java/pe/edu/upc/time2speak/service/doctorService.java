@@ -9,4 +9,8 @@ public interface doctorService {
     doctor getDoctor(int id);
     
     List<doctor> getDoctors();
+    
+    doctor actualizar(doctor Doctor);
+    
+    doctor iniciarSesion(String correo, String contrasena);
 }

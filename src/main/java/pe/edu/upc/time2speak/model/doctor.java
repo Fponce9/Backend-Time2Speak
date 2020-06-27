@@ -1,5 +1,6 @@
 package pe.edu.upc.time2speak.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,11 @@ public class doctor {
     
     private String  Nombre;
     private String Apellido;
-    private String Correo;
+    
+    @Column(name = "Correo", nullable = false)
+    private String correo;
+    
     private int Telefono;
-
+    private boolean deshabilitar;
+    private String contrasena;
 }

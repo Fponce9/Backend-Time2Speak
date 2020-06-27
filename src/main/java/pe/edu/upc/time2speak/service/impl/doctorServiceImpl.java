@@ -35,6 +35,26 @@ public class doctorServiceImpl implements doctorService{
          return (List<doctor>) repository.findAll();
     }
 
+    @Override
+    public doctor actualizar(doctor Doctor) {
+        doctor temp = repository.findById(Doctor.getId_doctor())
+                .orElse(null);
+        
+        temp.setContrasena(Doctor.getContrasena());
+        temp.setTelefono(Doctor.getTelefono());
+        return repository.save(temp);
+    }
+
+    @Override
+    public doctor iniciarSesion(String correo, String contrasena) {
+        doctor temp = repository.findByCorreo(correo);
+        String tempContra = temp.getContrasena();
+        if (tempContra.equals(contrasena)){
+            return temp;
+        }
+        else return null;
+    }
+
   
     
 }

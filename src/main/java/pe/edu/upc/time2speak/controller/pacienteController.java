@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import pe.edu.upc.time2speak.model.paciente;
@@ -28,6 +29,13 @@ public class pacienteController {
     @PostMapping("/deshabilitarPaciente/{Id}")
     public paciente deshabilitarCuenta(@PathVariable int Id){
         return PacienteService.deshabilitar(Id);
+    }
+    
+    @PutMapping("/actualizarPaciente")
+    public paciente actualizarCuenta(@RequestBody paciente Paciente){
+        
+        return PacienteService.editarDatos(Paciente.getDoctorId(), Paciente.getNombre(), Paciente.getContrasena(), 
+                Paciente.getApellido(), Paciente.getCorreo());
     }
     
     
