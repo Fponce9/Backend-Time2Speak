@@ -31,10 +31,10 @@ public class pacienteController {
         return PacienteService.deshabilitar(Id);
     }
     
-    @PutMapping("/actualizarPaciente")
+    @PostMapping("/actualizarPaciente")
     public paciente actualizarCuenta(@RequestBody paciente Paciente){
         
-        return PacienteService.editarDatos(Paciente.getDoctorId(), Paciente.getNombre(), Paciente.getContrasena(), 
+        return PacienteService.editarDatos(Paciente.getId_paciente(), Paciente.getNombre(), Paciente.getContrasena(), 
                 Paciente.getApellido(), Paciente.getCorreo());
     }
     

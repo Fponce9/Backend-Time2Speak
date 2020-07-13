@@ -61,4 +61,9 @@ public class doctorController {
     public doctor iniciarSesion(@PathVariable String correo,@PathVariable String contrasena){    
         return DoctorService.iniciarSesion(correo,contrasena);
     }
+    
+    @PostMapping("deshabilitarDoc/{id}")
+    public doctor deshabilitarDoctor(@PathVariable int id){
+        return DoctorService.deshabilitar(id);
+    }
 }

@@ -22,7 +22,7 @@ public class premios {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_premio;
     private String nombre_premio;
-    private Blob medalla;
+    private String medalla;
     private Date tiempo;
     
     @Column(name = "Paciente_id_paciente", nullable = false)

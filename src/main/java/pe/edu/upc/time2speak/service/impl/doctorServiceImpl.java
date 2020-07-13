@@ -55,6 +55,17 @@ public class doctorServiceImpl implements doctorService{
         else return null;
     }
 
+    @Override
+    public doctor deshabilitar(int id) {
+       doctor temp = repository.findById(id)
+                .orElse(null);
+       temp.setDeshabilitar(true);
+       
+       return repository.save(temp);
+    }
+
+    
+
   
     
 }

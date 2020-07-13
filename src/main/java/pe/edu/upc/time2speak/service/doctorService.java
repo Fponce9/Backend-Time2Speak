@@ -13,4 +13,6 @@ public interface doctorService {
     doctor actualizar(doctor Doctor);
     
     doctor iniciarSesion(String correo, String contrasena);
+
+    doctor deshabilitar(int id);
 }

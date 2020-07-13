@@ -29,4 +29,8 @@ public class doctor {
     private int Telefono;
     private boolean deshabilitar;
     private String contrasena;
+    
+    
 }
+
+
